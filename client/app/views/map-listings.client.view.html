@@ -9,12 +9,12 @@
     https://angular-ui.github.io/angular-google-maps/#!/api/windows
   -->
 
-  <div id="map_canvas" ng-controller="ListingsController" ng-init="find()">
+  <div class="row" ng-controller="ListingsController" ng-init="find()">
       //loading gif from img file
       <img id="loader" ng-show="loading" src="/../../img/484.gif">
 
       <ui-gmap-google-map center="map.center" zoom="map.zoom" draggable="true" pan="true" options="options" bounds="map.bounds">
-          <ui-gmap-markers models="listings" idkey="'_id'"coords="'coordinates'" >
+          <ui-gmap-markers models="listings" idkey="'_id'"coords="'coordinates'" click="onClick" >
             <ui-gmap-windows show="show">
               <div ng-non-bindable>
                   {{code}}<br/>
